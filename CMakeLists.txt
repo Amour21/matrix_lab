@@ -7,7 +7,9 @@ project(${PROJECT_NAME})
 
 include(CTest)
 enable_testing()  # defines BUILD_TESTING
-
+if(MSVC)
+    set(CTEST_CONFIGURATION_TYPE Release CACHE STRING "Default configuration for CTest" FORCE)
+endif()
 # Папка для всех бинарников
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
